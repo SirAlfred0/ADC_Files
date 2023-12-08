@@ -1,9 +1,10 @@
-import { JCIDateFormatter, JCDateSplitter } from "jalali-components";
+import { UCIDateFormatter, UCDateSplitter } from "universal-components";
 
 export class DateFormatterPersian implements JCIDateFormatter
 {
-    get DateSplitter(): JCDateSplitter {
-        return JCDateSplitter.slash
+    //Different calendar types use different splitters to split Year, month, and day from each other change this to match your calendar type
+    get DateSplitter(): UCDateSplitter {
+        return UCDateSplitter.slash
     }
 
 }
