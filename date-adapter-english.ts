@@ -1,8 +1,8 @@
-import { JCIDateAdapter } from "jalali-components";
+import { UCIDateAdapter } from "universal-components";
 import * as moment from 'jalali-moment';
 
 
-export class DateAdapterEnglish implements JCIDateAdapter
+export class DateAdapterEnglish implements UCIDateAdapter
 {
     
     getDaysOfWeek(): string[] 
@@ -142,10 +142,5 @@ export class DateAdapterEnglish implements JCIDateAdapter
     today(): string
     {
         return moment().locale('en').format('YYYY-MM-DD');
-    }
-
-    addTime(date: string, hours: number, minutes: number): string
-    {
-        return moment(date).add(hours, 'hours').add(minutes, 'minutes').format('YYYY-MM-DD');
     }
 }
