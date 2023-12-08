@@ -1,8 +1,8 @@
-import { UCIDateAdapter } from "universal-components";
+import { ADCIDateAdapter } from "@angular-date-components/scheduler";
 import * as moment from 'jalali-moment';
 
 
-export class DateAdapterEnglish implements UCIDateAdapter
+export class DateAdapterEnglish implements ADCIDateAdapter
 {
     
     getDaysOfWeek(): string[] 
