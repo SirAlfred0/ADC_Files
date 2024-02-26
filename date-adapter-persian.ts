@@ -1,4 +1,4 @@
-import { ADCIDateAdapter } from "@angular-date-components/scheduler";
+import { ADCIDateAdapter } from "@asadi/angular-date-components/core";
 import * as moment from 'jalali-moment';
 
 export class DateAdapterPersian implements ADCIDateAdapter
@@ -16,37 +16,6 @@ export class DateAdapterPersian implements ADCIDateAdapter
             'جمعه'
         ];
         return days;
-    }
-
-    getHoursOfDay(): string[] {
-        const hours: string[] = [
-            '00:00',
-           '01:00',
-           '02:00',
-           '03:00',
-           '04:00',
-           '05:00',
-            '06:00',
-           '07:00',
-           '08:00',
-           '09:00',
-           '10:00',
-           '11:00',
-            '12:00',
-           '13:00',
-           '14:00',
-           '15:00',
-           '16:00',
-           '17:00',
-            '18:00',
-           '19:00',
-           '20:00',
-           '21:00',
-           '22:00',
-           '23:00',
-        ]
-
-        return hours;
     }
 
     getMonthsOfYear(): string[] {
@@ -141,5 +110,10 @@ export class DateAdapterPersian implements ADCIDateAdapter
     today(): string
     {
         return moment().locale('en').format('YYYY-MM-DD');
+    }
+
+    addTime(date: string, hours: number, minutes: number): string
+    {
+        return moment(date).add(hours, 'hours').add(minutes, 'minutes').format('YYYY-MM-DD');
     }
 }
