@@ -4,22 +4,8 @@ import * as moment from 'jalali-moment';
 
 export class DateAdapterEnglish implements ADCIDateAdapter
 {
+    startDayOfweek: number = 0;
     
-    getDaysOfWeek(): string[] 
-    {
-        const days: string[] = [
-            'Sunday',
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday',
-        ];
-        return days;
-    }
-
-
     getMonthsOfYear(): string[] {
         const months: string[] = [
             'January',
