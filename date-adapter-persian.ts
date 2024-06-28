@@ -3,21 +3,8 @@ import * as moment from 'jalali-moment';
 
 export class DateAdapterPersian implements ADCIDateAdapter
 {
+    startDayOfweek: number = 6;
     
-    getDaysOfWeek(): string[] 
-    {
-        const days: string[] = [
-            'شنبه',
-            'یک شنبه',
-            'دوشنبه',
-            'سه شنبه',
-            'چهار شنبه',
-            'پنج شنبه',
-            'جمعه'
-        ];
-        return days;
-    }
-
     getMonthsOfYear(): string[] {
         const months: string[] = [
             'فروردین',
