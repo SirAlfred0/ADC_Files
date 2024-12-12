@@ -100,8 +100,19 @@ export class DateAdapterEnglish implements ADCIDateAdapter
         return moment().locale('en').format('YYYY-MM-DD');
     }
 
-    addTime(date: string, hours: number, minutes: number): string
-    {
-        return moment(date).add(hours, 'hours').add(minutes, 'minutes').format('YYYY-MM-DD');
+    getDayIndexOf(date: string): number {
+        return moment(date, 'YYYY-MM-DD').locale('en').day();
+    }
+
+    getWeekOf(date: string): number {
+        return moment(date, 'YYYY-MM-DD').locale('en').week();
+    }
+
+    getMonthOf(date: string): number {
+        return moment(date, 'YYYY-MM-DD').locale('en').month() + 1;
+    }
+
+    getYearOf(date: string): number {
+        return moment(date, 'YYYY-MM-DD').locale('en').year();
     }
 }
